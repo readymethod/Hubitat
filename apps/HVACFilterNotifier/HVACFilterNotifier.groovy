@@ -15,6 +15,7 @@
  *  for the specific language governing permissions and limitations under the License.
  *
  *  Changes:
+ *   2026-10-01: Added the ability to include fan on time into runtime
  *   2026-05-17: Move to "Automations" menu
  *.  2025-07-23: Add ability to snooze with button push or virtual switch
  *   2024-12-30: Add replace history
@@ -43,7 +44,7 @@ definition(
 import groovy.transform.Field
 import com.hubitat.app.DeviceWrapper
 
-@Field static final List<String> trackedStates = ["heating", "cooling", "fan only"]
+@Field static final List<String> trackedStates = ["heating", "cooling", "fan only","active"]
 @Field static final Long MILLISECONDS_PER_HOUR = 3600000
 @Field static final Integer MAX_HISTORY_DATES = 20
 
@@ -120,6 +121,7 @@ void initialize() {
    log.debug "Initializing"
    unsubscribe()
    subscribe(thermoDev, "thermostatOperatingState", "operatingStateHandler")
+   subscribe(thermoDev, "fanOperatingState","operatingStateHandler")
    if (snoozeButton) {
       subscribe(snoozeButton, snoozeButtonEvent, "snoozeButtonHandler")
    }
