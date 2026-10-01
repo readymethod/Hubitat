@@ -30,12 +30,12 @@
  
 definition(
    name: "HVAC Filter Notifier",
-   namespace: "RMoRobert",
+   namespace: "readymethod",
    author: "RMoRboert",
-   description: "Track furnace/AC thermostat runtime and get notified when time to change filter (based on preferences)",
+   description: "Track furnace/AC thermostat runtime and get notified when time to change filter (based on preferences). Forked from RMoRboert to modify behaviors to allow for fan tracking",
    category: "Convenience",
    menu: "Automations",
-   importUrl: "https://raw.githubusercontent.com/RMoRobert/Hubitat/master/apps/HVACFilterNotifier/HVACFilterNotifier.groovy",
+   importUrl: "https://raw.githubusercontent.com/readymethod/Hubitat/refs/heads/master/apps/HVACFilterNotifier/HVACFilterNotifier.groovy",
    iconUrl: "",
    iconX2Url: "",
    iconX3Url: ""
